@@ -35,7 +35,7 @@ public class DeliveryTest {
     void shouldPlaceOrderPositiveTest() {
         $("[data-test-id='city']").$("[placeholder='Город']").setValue("Санкт-Петербург");
         $("[data-test-id='date']").$("[placeholder='Дата встречи']").setValue(formatDeliveryDate(3));
-        $("[data-test-id= 'name']").$("[name ='name']").setValue("Михаил Иванов");
+        $("[data-test-id= 'name']").$("[name ='name']").setValue("Игорь Петров");
         $("[data-test-id='phone']").$("[name='phone']").setValue("+79087689678");
         $("[data-test-id='agreement']").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -45,9 +45,9 @@ public class DeliveryTest {
 
     @Test
     void shouldRequireValidCityIfCityNotIncludeTest() {
-        $("[data-test-id='city']").$("[placeholder='Город']").setValue("Вашингтон");
+        $("[data-test-id='city']").$("[placeholder='Город']").setValue("Москва");
         $("[data-test-id='date']").$("[placeholder='Дата встречи']").setValue(formatDeliveryDate(3));
-        $("[data-test-id= 'name']").$("[name ='name']").setValue("Михаил Иванов");
+        $("[data-test-id= 'name']").$("[name ='name']").setValue("Игорь Петров");
         $("[data-test-id='phone']").$("[name='phone']").setValue("+71234567890");
         $("[data-test-id='agreement']").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -59,7 +59,7 @@ public class DeliveryTest {
     void shouldPlaceOrderIfFourDaysPositiveTest() {
         $("[data-test-id='city']").$("[placeholder='Город']").setValue("Санкт-Петербург");
         $("[data-test-id='date']").$("[placeholder='Дата встречи']").setValue(formatDeliveryDate(4));
-        $("[data-test-id= 'name']").$("[name ='name']").setValue("Михаил Иванов");
+        $("[data-test-id= 'name']").$("[name ='name']").setValue("Игорь Петров");
         $("[data-test-id='phone']").$("[name='phone']").setValue("+71234567890");
         $("[data-test-id='agreement']").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -71,7 +71,7 @@ public class DeliveryTest {
     void shouldRequireValidNameIfNonCyrillicTest() {
         $("[data-test-id='city']").$("[placeholder='Город']").setValue("Санкт-Петербург");
         $("[data-test-id='date']").$("[placeholder='Дата встречи']").setValue(formatDeliveryDate(3));
-        $("[data-test-id= 'name']").$("[name ='name']").setValue("Peter Parker");
+        $("[data-test-id= 'name']").$("[name ='name']").setValue("Leo Messi");
         $("[data-test-id='phone']").$("[name='phone']").setValue("+71234567890");
         $("[data-test-id='agreement']").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -81,9 +81,9 @@ public class DeliveryTest {
 
     @Test
     void shouldRequireAgreementCheckboxTest() {
-        $("[data-test-id='city']").$("[placeholder='Город']").setValue("Санкт-Петербург");
+        $("[data-test-id='city']").$("[placeholder='Город']").setValue("Москва");
         $("[data-test-id='date']").$("[placeholder='Дата встречи']").setValue(formatDeliveryDate(3));
-        $("[data-test-id= 'name']").$("[name ='name']").setValue("Михаил Иванов");
+        $("[data-test-id= 'name']").$("[name ='name']").setValue("Игорь Петров");
         $("[data-test-id='phone']").$("[name='phone']").setValue("+71234567890");
         $$("button").find(exactText("Забронировать")).click();
         $("[data-test-id='agreement'].input_invalid .checkbox__text").shouldBe(visible)
@@ -94,8 +94,8 @@ public class DeliveryTest {
     void shouldRequireValidPhoneNumberIfNoPlusTest() {
         $("[data-test-id='city']").$("[placeholder='Город']").setValue("Санкт-Петербург");
         $("[data-test-id='date']").$("[placeholder='Дата встречи']").setValue(formatDeliveryDate(3));
-        $("[data-test-id= 'name']").$("[name ='name']").setValue("Михаил Иванов");
-        $("[data-test-id='phone']").$("[name='phone']").setValue("71234567890");
+        $("[data-test-id= 'name']").$("[name ='name']").setValue("Игорь Петров");
+        $("[data-test-id='phone']").$("[name='phone']").setValue("91434567890");
         $("[data-test-id='agreement']").click();
         $$("button").find(exactText("Забронировать")).click();
         $("[data-test-id='phone'].input_invalid .input__sub").shouldBe(visible)
@@ -106,7 +106,7 @@ public class DeliveryTest {
     void shouldRequireValidPhoneNumberIfTenNumbersTest() {
         $("[data-test-id='city']").$("[placeholder='Город']").setValue("Санкт-Петербург");
         $("[data-test-id='date']").$("[placeholder='Дата встречи']").setValue(formatDeliveryDate(3));
-        $("[data-test-id= 'name']").$("[name ='name']").setValue("Михаил Иванов");
+        $("[data-test-id= 'name']").$("[name ='name']").setValue("Игорь Петров");
         $("[data-test-id='phone']").$("[name='phone']").setValue("+7123456789");
         $("[data-test-id='agreement']").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -118,7 +118,7 @@ public class DeliveryTest {
     void shouldRequireValidPhoneNumberIfTwelveNumbersTest() {
         $("[data-test-id='city']").$("[placeholder='Город']").setValue("Санкт-Петербург");
         $("[data-test-id='date']").$("[placeholder='Дата встречи']").setValue(formatDeliveryDate(3));
-        $("[data-test-id= 'name']").$("[name ='name']").setValue("Михаил Иванов");
+        $("[data-test-id= 'name']").$("[name ='name']").setValue("Павел Кравцов");
         $("[data-test-id='phone']").$("[name='phone']").setValue("+712345678901");
         $("[data-test-id='agreement']").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -130,7 +130,7 @@ public class DeliveryTest {
     void shouldRequireValidCityIfEmptyCityFieldTest() {
         $("[data-test-id='city']").$("[placeholder='Город']").setValue("");
         $("[data-test-id='date']").$("[placeholder='Дата встречи']").setValue(formatDeliveryDate(3));
-        $("[data-test-id= 'name']").$("[name ='name']").setValue("Михаил Иванов");
+        $("[data-test-id= 'name']").$("[name ='name']").setValue("Александр Степанов");
         $("[data-test-id='phone']").$("[name='phone']").setValue("+71234567890");
         $("[data-test-id='agreement']").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -142,7 +142,7 @@ public class DeliveryTest {
     void shouldRequireValidDateIfEmptyDateFieldTest() {
         $("[data-test-id='city']").$("[placeholder='Город']").setValue("Санкт-Петербург");
         $("[data-test-id='date']").$("[class='input__control']").setValue("");
-        $("[data-test-id= 'name']").$("[name ='name']").setValue("Михаил Иванов");
+        $("[data-test-id= 'name']").$("[name ='name']").setValue("Михаил Фролов");
         $("[data-test-id='phone']").$("[name='phone']").setValue("+71234567890");
         $("[data-test-id='agreement']").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -166,7 +166,7 @@ public class DeliveryTest {
     void shouldRequireValidPhoneNumberIfEmptyPhoneFieldTest() {
         $("[data-test-id='city']").$("[placeholder='Город']").setValue("Санкт-Петербург");
         $("[data-test-id='date']").$("[placeholder='Дата встречи']").setValue(formatDeliveryDate(3));
-        $("[data-test-id= 'name']").$("[name ='name']").setValue("Михаил Иванов");
+        $("[data-test-id= 'name']").$("[name ='name']").setValue("Игорь Петров");
         $("[data-test-id='phone']").$("[name='phone']").setValue("");
         $("[data-test-id='agreement']").click();
         $$("button").find(exactText("Забронировать")).click();
